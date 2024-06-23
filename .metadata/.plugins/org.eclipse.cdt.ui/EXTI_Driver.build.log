@@ -1,0 +1,11 @@
+22:42:31 **** Build of configuration Debug for project EXTI_Driver ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "EXTI_Driver.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5231	    176	    412	   5819	   16bb	EXTI_Driver.elf
+Finished building: EXTI_Driver.siz
+ 
+
+22:42:32 Build Finished (took 1s.418ms)
+

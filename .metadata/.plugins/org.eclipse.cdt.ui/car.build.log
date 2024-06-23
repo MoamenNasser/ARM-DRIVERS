@@ -1,0 +1,15 @@
+19:42:44 **** Build of configuration Debug for project car ****
+make all 
+'Building file: ../src/car.cpp'
+'Invoking: Cross G++ Compiler'
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/car.d" -MT"src/car.o" -o "src/car.o" "../src/car.cpp"
+'Finished building: ../src/car.cpp'
+' '
+'Building target: car'
+'Invoking: Cross G++ Linker'
+g++  -o "car"  ./src/car.o   
+'Finished building target: car'
+' '
+
+19:42:47 Build Finished (took 3s.30ms)
+

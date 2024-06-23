@@ -1,0 +1,7 @@
+19:01:28 **** Clean-only build of configuration Debug for project LCD_DRIVER_NEW ****
+make clean 
+rm -rf  LCD_DRIVER_NEW.hex  ./HLCD_Program.o ./MDIO_Program.o ./main.o  sizedummy  LCD_DRIVER_NEW.lss  ./HLCD_Program.d ./MDIO_Program.d ./main.d  LCD_DRIVER_NEW.elf
+ 
+
+19:01:28 Build Finished (took 196ms)
+

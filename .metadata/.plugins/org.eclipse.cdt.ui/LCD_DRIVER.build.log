@@ -1,0 +1,55 @@
+20:35:04 **** Incremental Build of configuration Debug for project LCD_DRIVER ****
+make all 
+Building file: ../HLCD_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HLCD_Program.d" -MT"HLCD_Program.o" -c -o "HLCD_Program.o" "../HLCD_Program.c"
+In file included from ../HLCD_Program.c:10:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../HLCD_Program.c:10:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HLCD_Program.c: In function 'HLCD_S32Private_GetPower':
+../HLCD_Program.c:296: warning: control reaches end of non-void function
+Finished building: ../HLCD_Program.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:10:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:10:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: LCD_DRIVER.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_DRIVER.map -mmcu=atmega32 -o "LCD_DRIVER.elf"  ./HLCD_Program.o ./MDIO_Program.o ./main.o   
+Finished building target: LCD_DRIVER.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_DRIVER.elf  >"LCD_DRIVER.lss"
+Finished building: LCD_DRIVER.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_DRIVER.elf  "LCD_DRIVER.hex"
+Finished building: LCD_DRIVER.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_DRIVER.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10966 bytes (33.5% Full)
+(.text + .data + .bootloader)
+
+Data:        266 bytes (13.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:35:06 Build Finished (took 2s.190ms)
+

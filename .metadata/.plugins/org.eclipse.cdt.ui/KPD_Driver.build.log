@@ -1,0 +1,20 @@
+03:41:55 **** Incremental Build of configuration Debug for project KPD_Driver ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 KPD_Driver.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10990 bytes (33.5% Full)
+(.text + .data + .bootloader)
+
+Data:         10 bytes (0.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+03:41:55 Build Finished (took 323ms)
+

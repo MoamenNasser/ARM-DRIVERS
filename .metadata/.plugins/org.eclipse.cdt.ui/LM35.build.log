@@ -1,0 +1,20 @@
+03:41:55 **** Incremental Build of configuration Debug for project LM35 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LM35.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13262 bytes (40.5% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+03:41:55 Build Finished (took 334ms)
+

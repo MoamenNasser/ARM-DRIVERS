@@ -1,0 +1,53 @@
+14:50:21 **** Incremental Build of configuration Debug for project Interrupt ****
+make all 
+Building file: ../MEXINT_Program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MEXINT_Program.d" -MT"MEXINT_Program.o" -c -o "MEXINT_Program.o" "../MEXINT_Program.c"
+In file included from ../MEXINT_Program.c:13:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../MEXINT_Program.c:13:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MEXINT_Program.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:11:
+e:/embedded coure/sdk/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: Interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Interrupt.map -mmcu=atmega32 -o "Interrupt.elf"  ./MDIO_Program.o ./MEXINT_Program.o ./main.o   
+Finished building target: Interrupt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Interrupt.elf  >"Interrupt.lss"
+Finished building: Interrupt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Interrupt.elf  "Interrupt.hex"
+Finished building: Interrupt.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8944 bytes (27.3% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+14:50:22 Build Finished (took 1s.563ms)
+

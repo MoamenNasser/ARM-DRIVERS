@@ -1,0 +1,70 @@
+21:52:34 **** Incremental Build of configuration Debug for project IR_Driver ****
+make all 
+Building file: ../src/IR_Program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/IR_Program.d" -MT"src/IR_Program.o" -c -o "src/IR_Program.o" "../src/IR_Program.c"
+../src/IR_Program.c: In function 'HIR_voidGetIRFrame':
+../src/IR_Program.c:80:3: warning: implicit declaration of function 'MSTK_voidSetIntervalSingle' [-Wimplicit-function-declaration]
+   MSTK_voidSetIntervalSingle(1000000, voidTakeAction);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/IR_Program.c:87:43: warning: implicit declaration of function 'MSTK_u32GetElapsedTime' [-Wimplicit-function-declaration]
+   Copy_u32FrameData[Copy_u8EdgeCounter] = MSTK_u32GetElapsedTime();
+                                           ^~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/IR_Program.c
+ 
+Building file: ../src/Systick_program.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/Systick_program.d" -MT"src/Systick_program.o" -c -o "src/Systick_program.o" "../src/Systick_program.c"
+In file included from ../src/Systick_program.c:9:0:
+../src/Systick_program.c: In function 'MSTK_voidSetBusyWait':
+../include/BIT_MATH.h:10:45: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+ #define GET_BIT(Var,BitNo)  ((Var)>>(BitNo))&1
+                                             ^
+../src/Systick_program.c:61:8: note: in expansion of macro 'GET_BIT'
+  while(GET_BIT(STK_CTRL, COUNTFLAG) == 0);
+        ^~~~~~~
+../src/Systick_program.c: In function 'MSTK_voidSetIntervalPeriodic':
+../src/Systick_program.c:119:39: warning: unused parameter 'Copy_u32Ticks' [-Wunused-parameter]
+ void MSTK_voidSetIntervalPeriodic(u32 Copy_u32Ticks, void (*Copy_ptr) (void))
+                                       ^~~~~~~~~~~~~
+../src/Systick_program.c:119:61: warning: unused parameter 'Copy_ptr' [-Wunused-parameter]
+ void MSTK_voidSetIntervalPeriodic(u32 Copy_u32Ticks, void (*Copy_ptr) (void))
+                                                             ^~~~~~~~
+../src/Systick_program.c: In function 'MSTK_u32GetElapsedTime':
+../src/Systick_program.c:146:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/Systick_program.c: In function 'MSTK_u32GetRemainingTime':
+../src/Systick_program.c:157:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Systick_program.c
+ 
+Building file: ../src/main.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DHSE_VALUE=8000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f1-stdperiph" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'SysTick_Handler':
+../src/main.c:63:2: warning: implicit declaration of function 'MSTK_CallBack'; did you mean 'MSTK_voidSetCallBack'? [-Wimplicit-function-declaration]
+  MSTK_CallBack();
+  ^~~~~~~~~~~~~
+  MSTK_voidSetCallBack
+Finished building: ../src/main.c
+ 
+Building target: IR_Driver.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"IR_Driver.map" --specs=nano.specs -o "IR_Driver.elf"  ./system/src/stm32f1-stdperiph/misc.o ./system/src/stm32f1-stdperiph/stm32f10x_gpio.o ./system/src/stm32f1-stdperiph/stm32f10x_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f10x.o ./system/src/cmsis/vectors_stm32f10x.o  ./src/DIO_program.o ./src/EXTI_program.o ./src/IR_Program.o ./src/LED_Matrix_Program.o ./src/NVIC_program.o ./src/RCC_Program.o ./src/Systick_program.o ./src/main.o   
+Finished building target: IR_Driver.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "IR_Driver.elf"  "IR_Driver.hex"
+Finished building: IR_Driver.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "IR_Driver.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5571	    176	    624	   6371	   18e3	IR_Driver.elf
+Finished building: IR_Driver.siz
+ 
+
+21:52:39 Build Finished (took 5s.24ms)
+

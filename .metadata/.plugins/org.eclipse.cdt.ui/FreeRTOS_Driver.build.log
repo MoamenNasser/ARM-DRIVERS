@@ -1,0 +1,39 @@
+19:58:33 **** Incremental Build of configuration Debug for project FreeRTOS_Driver ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:30: warning: return type of 'main' is not 'int'
+../main.c: In function 'LCD1':
+../main.c:132: warning: pointer targets in passing argument 1 of 'HLCD_VoidWriteStr' differ in signedness
+../main.c: In function 'LCD2':
+../main.c:151: warning: pointer targets in passing argument 1 of 'HLCD_VoidWriteStr' differ in signedness
+Finished building: ../main.c
+ 
+Building target: FreeRTOS_Driver.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,FreeRTOS_Driver.map -mmcu=atmega16 -o "FreeRTOS_Driver.elf"  ./HLCD_Program.o ./MDIO_Program.o ./croutine.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: FreeRTOS_Driver.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S FreeRTOS_Driver.elf  >"FreeRTOS_Driver.lss"
+Finished building: FreeRTOS_Driver.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 FreeRTOS_Driver.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   21042 bytes (128.4% Full)
+(.text + .data + .bootloader)
+
+Data:       1069 bytes (104.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:58:37 Build Finished (took 4s.13ms)
+
